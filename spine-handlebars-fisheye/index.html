@@ -20,15 +20,20 @@
 
   
   <!-- TEMPLATES-->
+  <!-- Grid Cells-->
   <script id="cell-template" type="text/x-handlebars-template">
-      <div class="cell-name"><span class="span-keyword">Keyword: &quot;</span>{{name}}<span class="span-keyword">&quot;</span></div>
+      <div class="cell-name">{{name}}</div>
   </script>
+  
+  <!-- Grid Keyword Cells-->
   <script id="cell-keyword-template" type="text/x-handlebars-template">
       <img class="cell-chart1" src="{{chart1}}" alt="someChart" />
       <img class="cell-sparkChart" src="{{sparkChart}}" alt="sparkChart" />
       <div class="cell-name"><span class="span-keyword">Keyword: &quot;</span>{{name}}<span class="span-keyword">&quot;</span></div>
       <div class="cell-ctr"><span class="span-ctr">CTR: </span>{{ctr}}</div>
   </script>
+  
+  <!-- Grid Rows-->
   <script id="grid-row-template" type="text/x-handlebars-template">
     <div class="row"></div>
   </script>
