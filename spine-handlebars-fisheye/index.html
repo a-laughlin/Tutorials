@@ -27,10 +27,13 @@
   
   <!-- Grid Keyword Cells-->
   <script id="cell-keyword-template" type="text/x-handlebars-template">
+    
       <img class="cell-chart1" src="{{chart1}}" alt="someChart" />
       <img class="cell-sparkChart" src="{{sparkChart}}" alt="sparkChart" />
-      <div class="cell-name"><span class="span-keyword">Keyword: &quot;</span>{{name}}<span class="span-keyword">&quot;</span></div>
       <div class="cell-ctr"><span class="span-ctr">CTR: </span>{{ctr}}</div>
+      <div class="cell-name"><span class="span-keyword">Keyword: &quot;</span>{{name}}<span class="span-keyword">&quot;</span></div>
+      <div class="cell-red-toggle"><span class="span-red{{#if hasColor}} redColor{{/if}}">Click to change colors!</span></div>
+    
   </script>
   
   <!-- Grid Rows-->
