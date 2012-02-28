@@ -77,10 +77,10 @@ td { vertical-align: top; }
 
 
 /* ===== Primary Styles ========================================================
-   Author:
+   Author: Adam Laughlin a-laughlin.com
    ========================================================================== */
    
-/*Grid styling.  Currently required for the fisheye plugin.  Thinking about incorporating this into the plugin code*/
+/*Grid styling.  Currently required for the fisheye plugin.*/
 .campaign-grid { width:810px; height:460px }
 .fisheye-row { clear: both; width: 100% }
 .fisheye-cell { background-color: #DDDDDD; clear: none; float: right; margin: 1px; cursor: cell }
@@ -94,12 +94,15 @@ img.cell-sparkChart, #campaign-grid0.expanded img.cell-sparkChart, #campaign-gri
 .cell-campaign {background-color: #CAADA4;}
 .cell-adgroup  {background-color: #AC97DA;}
 .cell-keyword {background-color: #BFD3A1;}
-.cell-keyword div {cursor:pointer}
+
 .span-keyword{display:none}
+.span-red{cursor:pointer;border-bottom: 1px dashed #000;}
+div.cell-red-toggle{display:none;}
 .span-ctr{display:none}
 .fisheye-cell > .cell-example,.fisheye-cell > .cell-id,.fisheye-cell > .cell-cid {display:none}
+
+
 .expanded .fisheye-cell {font-size:80%;}
- 
 .maxHeightLock.maxWidthLock > * {display:block;font-size:200%;clear:none;margin:5px}
 .maxHeightLock.maxWidthLock.cell-keyword span  {display:inline}
 .activeColGrowing img,.activeRowGrowing img,.activeColShrinking img,.activeRowShrinking img,.maxHeightLock.maxWidthLock .cell-sparkChart{display:none}
