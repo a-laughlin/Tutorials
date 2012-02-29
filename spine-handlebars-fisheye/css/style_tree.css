@@ -102,7 +102,7 @@ div.cell-red-toggle,
 .maxHeightLock.maxWidthLock.cell-keyword span  {display:inline}
 .maxHeightLock.maxWidthLock > .cell-chart1 {display:block;float:right;clear:none;}
 
-.span-red{cursor:pointer;border-bottom: 1px dashed #000;}
+.span-red{cursor:pointer;border-bottom: 1px dashed #000}
 .redColor {color:#D00;}
 
 
