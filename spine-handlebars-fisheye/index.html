@@ -19,46 +19,37 @@
   <header></header>
 
   
-  <!-- TEMPLATES-->
-  <!-- Grid Cells-->
-  <script id="cell-template" type="text/x-handlebars-template">
-      <div class="cell-name">{{name}}</div>
-  </script>
-  
-  <!-- Grid Keyword Cells-->
-  <script id="cell-keyword-template" type="text/x-handlebars-template">
-    
-      <img class="cell-chart1" src="{{chart1}}" alt="someChart" />
-      <img class="cell-sparkChart" src="{{sparkChart}}" alt="sparkChart" />
-      <div class="cell-ctr"><span class="span-ctr">CTR: </span>{{ctr}}</div>
-      <div class="cell-name"><span class="span-keyword">Keyword: &quot;</span>{{name}}<span class="span-keyword">&quot;</span></div>
-      <div class="cell-red-toggle"><span class="span-red{{#if hasColor}} redColor{{/if}}">Click to change colors!</span></div>
-    
-  </script>
-  
-  <!-- Grid Rows-->
-  <script id="grid-row-template" type="text/x-handlebars-template">
-    <div class="row"></div>
-  </script>
+<!-- TEMPLATES-->
+<!-- Grid Cells-->
+<script id="cell-template" type="text/x-handlebars-template">
+    <div class="cell-name">{{name}}</div>
+</script>
 
-  
-  <!-- CONTENT -->
-  <div id="content" role="main">
-    <div id="campaign-grid">
-      <div class="row">
-        <div>Keywords</div>
-        <div>Ad Group</div>
-        <div>Campaign</div>
-        <!-- templates insert here-->
-      </div>
+<!-- Grid Keyword Cells-->
+<script id="cell-keyword-template" type="text/x-handlebars-template">
+  <img class="cell-chart1" src="{{chart1}}" alt="someChart" />
+  <img class="cell-sparkChart" src="{{sparkChart}}" alt="sparkChart" />
+  <div class="cell-ctr"><span class="span-ctr">CTR: </span>{{ctr}}</div>
+  <div class="cell-name"><span class="span-keyword">Keyword: &quot;</span>{{name}}<span class="span-keyword">&quot;</span></div>
+  <div class="cell-red-toggle"><span class="span-red{{#if hasColor}} redColor{{/if}}">Click to change colors!</span></div>
+</script>
+
+<!-- Grid Rows-->
+<script id="grid-row-template" type="text/x-handlebars-template">
+  <div class="row"></div>
+</script>
+
+<!-- CONTENT -->
+<div id="spine-example" role="main">
+  <div id="campaign-grid">
+    <div class="row">
+      <div>Keywords</div>
+      <div>Ad Group</div>
+      <div>Campaign</div>
+      <!-- templates insert here-->
     </div>
-    <form id="grid-controls">
-      <input type="text" name="new-campaign"></input>
-      <input type="text" name="new-adGroup"></input>
-      <input type="text" name="new-campaign"></input>
-      
-    </form>
   </div>
+</div>
 
   
   <footer></footer>
