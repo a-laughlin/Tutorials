@@ -66,7 +66,7 @@ CellController = Spine.Controller.sub({
   init:function(){ // runs when CellController is created with new CellController()
     if(!this.modelInstance) throw 'remember to use new CellController({modelInstance:foo}) when creating a new CellController'
     this.modelInstance.bind('change',this.proxy(this.render)); // render the cell when the modelInstance's change event fires
-    this.render(); // render the cell
+    this.render(); // render the cell the first time
   },
 
   render:function(){
@@ -82,43 +82,39 @@ KeywordCellController=CellController.sub({ // Controller  for just the keyword c
   // overrides the template defined in CellController
   template:Handlebars.compile($("#cell-keyword-template").html()),
   
-  events:{ 'click div':'toggleColor' }, // bind the toggleColor function to descendent divs' click events
+  events:{ 'click .span-red':'toggleColor' }, // bind the toggleColor function to descendent divs' click events
 
   render:function(){
     var sourceStr=this.template(this.modelInstance);// create an HTML string from the template
     this.el.html(sourceStr); // fill the cell with the contents of the HTML string
-
-    if (this.modelInstance.hasColor==='red') { // check if hasColor is 'red'
-      this.el.children('div').addClass('redColor'); // if so, apply the redColor class to child divs
-    }
-
   },
 
   toggleColor:function(event){ // Toggles the model's hasColor attribute
     event.stopPropagation(); // prevent the event from bubbling up and closing the grid cell
     
     var color = this.modelInstance.hasColor === 'red' ? // does the model have a red color?
-        false : // yes, switch it to false
-        'red'; // no, set it to red
+        false : // yes, set color variable to the opposite - false
+        'red'; // no, set color variable to the opposite - 'red'
     
     this.modelInstance.updateAttribute('hasColor', color ); // update the hasColor attribute
-    // Note: this.modelInstance.updateAttribute() automatically calls this.modelInstance.save()
-    // save() automatically triggers the modelInstance's update() and change() events.
+    // Note: this.modelInstance.updateAttribute() automatically calls this.modelInstance.save() .
+    // Calling save() automatically triggers the modelInstance's update() and change() events.
     //
-    // Since we bound this.render to the change event in CellController.init with
-    // "this.modelInstance.bind('change',this.proxy(this.render))", 
-    // updateAttribute() here automatically re-renders the cell.
+    // Since we bound this.render() to the change event in CellController.init with...
+    // "this.modelInstance.bind('change',this.proxy(this.render))" , 
+    // calling updateAttribute() here automatically re-renders the cell.
   }
 }),
 
 UI = Spine.Controller.sub({ // Overall UI controller, initializes UI (which consists of a single grid in this case)
   
   init:function(){
-    $.each([Keyword,AdGroup,Campaign],function(k,v){  // loop over the different models
-      v.extend(Spine.Model.Local); // enable local storage persistence
-      v.fetch(); // get the models from local storage if there
-      v.destroyAll();  // temporary debugging function to clear the stored records each time
-    });
+    // Uncomment this section to enable local storage
+    // $.each([Keyword,AdGroup,Campaign],function(k,v){  // loop over the different models
+      // v.extend(Spine.Model.Local); // enable local storage persistence
+      // v.fetch(); // get the models from local storage if there
+      // // v.destroyAll();  // temporary debugging function to clear the stored records each time
+    // });
     
     if(Keyword.count()===0) { // if fetching from localstorage returns nothing...
       
@@ -204,6 +200,6 @@ UI = Spine.Controller.sub({ // Overall UI controller, initializes UI (which cons
 }),
 
 // initialize the UI in the content div
-renderedUI=new UI({el:$('#content')});
+renderedUI=new UI({el:$('#spine-example')});
 
 });
