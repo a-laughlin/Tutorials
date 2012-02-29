@@ -8,25 +8,20 @@ article, aside, details, footer, header, hgroup, nav, section,audio, canvas, vid
     padding: 0;
     vertical-align: baseline;
 }
-
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 audio:not([controls]) { display: none; }
 [hidden] { display: none; }
-
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 html, button, input, select, textarea { font-family: sans-serif; color: #222; }
 body { margin: 0; font-size: 1em; line-height: 1.4; }
-
 ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
 ::selection { background: #fe57a1; color: #fff; text-shadow: none; }
-
 a { color: #00e; }
 a:visited { color: #551a8b; }
 a:hover { color: #06e; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
-
 abbr[title] { border-bottom: 1px dotted; }
 b, strong { font-weight: bold; }
 blockquote { margin: 1em 40px; }
@@ -39,23 +34,17 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 q { quotes: none; }
 q:before, q:after { content: ""; content: none; }
 small { font-size: 85%; }
-
 sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
-
-ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
-dd { margin: 0 0 0 40px; }
-nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
-
-img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
-
+ul, ol { margin: 1em 0; padding: 0 0 0 3em; }
+dd { margin: 0 0 0 3em; }
+nav ul, nav ol { list-style: none; list-style-image: none;}
+img { -ms-interpolation-mode: bicubic; vertical-align: middle; }
 svg:not(:root) { overflow: hidden; }
-
-figure { margin: 0; }
-
-form { margin: 0; }
-fieldset { border: 0; margin: 0; padding: 0; }
+figure {}
+form {}
+fieldset {}
 label { cursor: pointer; }
 legend { border: 0; *margin-left: -7px; padding: 0; white-space: normal; }
 button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
@@ -69,47 +58,51 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 textarea { overflow: auto; vertical-align: top; resize: vertical; }
 input:valid, textarea:valid {  }
 input:invalid, textarea:invalid { background-color: #f0dddd; }
-
 table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
-
 .chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
+
+
 
 
 /* ===== Primary Styles ========================================================
    Author: Adam Laughlin a-laughlin.com
    ========================================================================== */
    
-/*Grid styling.  Currently required for the fisheye plugin.*/
+/*Grid styling.  Currently required for the fisheye plugin. It really needs a rebuild with better classes.*/
 .campaign-grid { width:810px; height:460px }
 .fisheye-row { clear: both; width: 100% }
 .fisheye-cell { background-color: #DDDDDD; clear: none; float: right; margin: 1px; cursor: cell }
 .fisheye-cell div { display:inline }
 .adgroup-row {padding-top:10px}
 
-.cell-chart1{display:none}
+
 #campaign-grid0 img.cell-sparkChart{display:block; float:right;clear:none;margin:2px 2px 0 0}
-img.cell-sparkChart, #campaign-grid0.expanded img.cell-sparkChart, #campaign-grid0.shrink img.cell-sparkChart{display:none}
+
 /*grid coloring & effects*/
 .cell-campaign {background-color: #CAADA4;}
 .cell-adgroup  {background-color: #AC97DA;}
 .cell-keyword {background-color: #BFD3A1;}
 
-.span-keyword{display:none}
-.span-red{cursor:pointer;border-bottom: 1px dashed #000;}
-div.cell-red-toggle{display:none;}
-.span-ctr{display:none}
-.fisheye-cell > .cell-example,.fisheye-cell > .cell-id,.fisheye-cell > .cell-cid {display:none}
-
+.cell-chart1,
+img.cell-sparkChart,
+#campaign-grid0.expanded img.cell-sparkChart,
+#campaign-grid0.shrink img.cell-sparkChart,
+div.cell-red-toggle,
+.span-keyword,
+.span-ctr,
+.activeColGrowing img,
+.activeRowGrowing img,
+.activeColShrinking img,
+.activeRowShrinking img,
+.maxHeightLock.maxWidthLock .cell-sparkChart{display:none}
 
 .expanded .fisheye-cell {font-size:80%;}
 .maxHeightLock.maxWidthLock > * {display:block;font-size:200%;clear:none;margin:5px}
 .maxHeightLock.maxWidthLock.cell-keyword span  {display:inline}
-.activeColGrowing img,.activeRowGrowing img,.activeColShrinking img,.activeRowShrinking img,.maxHeightLock.maxWidthLock .cell-sparkChart{display:none}
-
 .maxHeightLock.maxWidthLock > .cell-chart1 {display:block;float:right;clear:none;}
 
-/*state toggling*/
+.span-red{cursor:pointer;border-bottom: 1px dashed #000;}
 .redColor {color:#D00;}
 
 
